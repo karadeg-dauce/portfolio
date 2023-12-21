@@ -41,11 +41,7 @@ query ($id: String) {
       hero_image_alt
       hero_image {
         childrenImageSharp {
-          gatsbyImageData(
-            width: 200
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
+          gatsbyImageData
         }
       }
     }
