@@ -6,8 +6,10 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
 const BlogPost = ({data, children}) => {
-  const image = data.mdx.frontmatter.hero_image.childrenImageSharp[0].gatsbyImageData
+  const images = data.mdx.frontmatter.hero_image.childrenImageSharp;
 
+  const image = images.length > 0 ? getImage(images[0].gatsbyImageData) : undefined;
+  
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>Posted: {data.mdx.frontmatter.date}</p>
@@ -39,7 +41,11 @@ query ($id: String) {
       hero_image_alt
       hero_image {
         childrenImageSharp {
-          gatsbyImageData
+          gatsbyImageData(
+            width: 200
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }
