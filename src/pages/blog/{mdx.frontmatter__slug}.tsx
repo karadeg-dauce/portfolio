@@ -7,8 +7,8 @@ import SEO from '../../components/seo'
 
 const BlogPost = ({data, children}) => {
   const images = data.mdx.frontmatter.hero_image.childrenImageSharp;
-
-  const image = images.length > 0 ? getImage(images[0].gatsbyImageData) : undefined;
+  const imageData = images.length > 0 ? images[0].gatsbyImageData : null;
+  const image = imageData ? getImage(imageData) : null;
   
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
