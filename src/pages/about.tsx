@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const AboutPage = () => {
   return (
@@ -9,11 +10,6 @@ const AboutPage = () => {
   )
 }
 
-export const Head = () => (
-    <>
-      <title>About Me</title>
-      <meta name="description" content="Your description" />
-    </>
-  )
+export const Head = () => (<SEO title="About Me" description={undefined} pathname={undefined} children={undefined}/>)
 
 export default AboutPage
