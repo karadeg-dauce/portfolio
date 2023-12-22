@@ -5,36 +5,37 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
-const BlogPost = ({data, children}) => {
+const BlogPost = () => {
 
-  console.log(data)
-  const images = data.mdx.frontmatter.hero_image.childrenImageSharp;
-  const imageData = images.length > 0 ? images[0].gatsbyImageData : null;
-  const image = imageData ? getImage(imageData) : null;
+  // console.log(data)
+  // const images = data.mdx.frontmatter.hero_image.childrenImageSharp;
+  // const imageData = images.length > 0 ? images[0].gatsbyImageData : null;
+  // const image = imageData ? getImage(imageData) : null;
 
-  console.log(images)
+  // console.log(images)
   
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>Posted: {data.mdx.frontmatter.date}</p>
-      {image && (
-        <GatsbyImage
-          image={image}
-          alt={data.mdx.frontmatter.hero_image_alt}
-        />
-      )}
-      <p>
-        Photo Credit:{" "}
-        <a href={data.mdx.frontmatter.hero_image_credit_link}>
-          {data.mdx.frontmatter.hero_image_credit_text}
-        </a>
-      </p>
-      {children} 
-    </Layout>
+    // <Layout pageTitle={data.mdx.frontmatter.title}>
+    //   <p>Posted: {data.mdx.frontmatter.date}</p>
+    //   {image && (
+    //     <GatsbyImage
+    //       image={image}
+    //       alt={data.mdx.frontmatter.hero_image_alt}
+    //     />
+    //   )}
+    //   <p>
+    //     Photo Credit:{" "}
+    //     <a href={data.mdx.frontmatter.hero_image_credit_link}>
+    //       {data.mdx.frontmatter.hero_image_credit_text}
+    //     </a>
+    //   </p>
+    //   {children} 
+    // </Layout>
+    <p>Bonjour</p>
   )
 }
 
-export const query = graphql`
+console.log(graphql`
 query ($id: String) {
   mdx(id: {eq: $id}) {
     frontmatter {
@@ -51,8 +52,8 @@ query ($id: String) {
     }
   }
 }
-`
+`)
 
-export const Head = ({data}) => <SEO title={data.mdx.frontmatter.title} description={undefined} pathname={undefined} children={undefined} />
+export const Head = () => <SEO title="titre" description={undefined} pathname={undefined} children={undefined} />
 
 export default BlogPost
