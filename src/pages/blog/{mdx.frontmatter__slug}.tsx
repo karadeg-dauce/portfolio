@@ -6,9 +6,13 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
 const BlogPost = ({data, children}) => {
+
+  console.log(data)
   const images = data.mdx.frontmatter.hero_image.childrenImageSharp;
   const imageData = images.length > 0 ? images[0].gatsbyImageData : null;
   const image = imageData ? getImage(imageData) : null;
+
+  console.log(images)
   
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
