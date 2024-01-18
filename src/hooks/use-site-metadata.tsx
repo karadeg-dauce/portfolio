@@ -14,4 +14,5 @@ export const useSiteMetadata = () => {
   `)
 
   return data.site.siteMetadata
+  return null
 }
