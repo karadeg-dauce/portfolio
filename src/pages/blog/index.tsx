@@ -1,44 +1,22 @@
+// Step 1: Import React
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
-const BlogPage = ({ data }) => {
+// Step 2: Define your component
+const IndexPage = () => {
   return (
-    <Layout pageTitle="My Blog Posts">
-      {
-        data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-            <h2>
-              <Link to={`/blog/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>
-            <p>Posted: {node.frontmatter.date}</p>
-            <p>{node.excerpt}</p>
-          </article>
-        ))
-      }
+    <Layout pageTitle="Home Page">
+      <p>I'm making this by following the Gatsby Tutorial.</p>
+      <StaticImage src='../images/cover.jpg' alt=' '/>
     </Layout>
   )
 }
 
-export const query = graphql`
-  query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          slug
-        }
-        id
-      }
-    }
-  }
-`
+// You'll learn about this in the next task, just copy it for now
+export const Head = () => (<SEO title="Home Page"  description={undefined} pathname={undefined} children={undefined}/>)
 
-export const Head = () => (<SEO title="My Blog Posts" description={undefined} pathname={undefined} children={undefined}/>)
-
-export default BlogPage
+// Step 3: Export your component
+export default IndexPage

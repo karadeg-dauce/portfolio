@@ -17,11 +17,21 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-image",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-omni-font-loader`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      }
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Roboto`,
+            file: `https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap`,
+          },
+          {
+            name: `Poly`,
+            file: `https://fonts.googleapis.com/css2?family=Poly:ital@1&display=swap`,
+          },
+        ],
+      },
     },
     "gatsby-plugin-mdx",
   ],

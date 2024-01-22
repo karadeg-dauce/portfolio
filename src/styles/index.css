@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h3.robotoTitle{
+    font-family: 'Roboto'!important;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+}

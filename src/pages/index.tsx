@@ -1,17 +1,19 @@
 // Step 1: Import React
 import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
+// Import from a CSS file in your src
+import "../styles/index.css"
 
-import Layout from '../components/layout'
 import SEO from '../components/seo'
+import ProfilView from '../components/profilView/profilView'
+import FirstPage from '../components/firstPage/firstPage'
 
 // Step 2: Define your component
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
-      <StaticImage src='../images/cover.jpg' alt=' '/>
-    </Layout>
+    <div className='home'>
+      <ProfilView/>
+      <FirstPage/>
+    </div>
   )
 }
 

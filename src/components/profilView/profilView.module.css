@@ -1,0 +1,20 @@
+.imageContainer {
+    height: calc( 100vh - 100px);
+    width: 40%;
+
+    position: relative;
+
+    padding: 50px;
+
+    background-image: url(../../images/profil/profil.png);
+    background-size: cover;
+}
+
+.titleContainer {
+    position: absolute;
+    bottom: 50px;
+}
+
+.imageContainer h3 {
+    color: white;
+}

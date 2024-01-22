@@ -1,0 +1,70 @@
+.firstPageContainer {
+    width: calc( 100% - 150px );
+
+    padding: 75px 150px;
+}
+
+.firstPageContainer h1 {
+    font-family: 'Roboto'!important;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: -1px;
+}
+
+.lightDivider {
+    border-top: 1px solid #000;
+    border-bottom: 2px solid #000;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.menuLink, .menuDivider {
+    padding: 10px 0;
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 32px;
+    font-weight: 300;
+    color: #000;
+}
+
+.menuDivider {
+     padding: 10px 20px;
+}
+
+.mainArticle {
+    margin: 80px 0;
+}
+
+.mainArticle h2 {
+    font-family: 'Poly';
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.coverMainArticle {
+    margin: 24px 24px 24px 0;
+    height: 50vh;
+    width: 100%;
+    flex: 1 1;
+
+    background-image: url(../../images/venise/1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.textContainer {
+    flex: 3 1;
+}
+
+.contentMainArticle {
+    display: flex;
+    flex-direction: row;
+}
+
+.contentMainArticle p {
+    margin-top: 24px;
+    width: 20%;
+}
